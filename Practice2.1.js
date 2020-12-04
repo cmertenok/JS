@@ -15,3 +15,5 @@ function key() {
   console.log(`3) ${key()}-${key()}-${key()}-${key()}`);
   console.log(`4) ${key()}-${key()}-${key()}-${key()}`);
   console.log(`5) ${key()}-${key()}-${key()}-${key()}`);
+
+  
