@@ -2,7 +2,7 @@
 
 let user = {
     name: "Джон",
-    age: 30,
+    age: 40,
   
     sayHi() {
       
