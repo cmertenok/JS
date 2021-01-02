@@ -1,6 +1,6 @@
 'use strict'
 
-const array = [true, 'hello', 5, 'Hi', 12, 10n, -200, false,'5', false, 'word', true , new Object, 'Ukraine', true, -48, 10n, 4.54, false, 'use', 'car', 567586970, new Function, 'dog', true, '567', false, '556', 'animals', new Object, new Function];
+const array = [true, 'hello', 5, 6, 'Hi', 12, 10n, -200, false,'5', false, 'word', true , new Object, 'Ukraine', true, -48, 10n, 4.54, false, 'use', 'car', 567586970, new Function, 'dog', true, '567', false, '556', 'animals', new Object, new Function];
 let obj = {
     string: 0,
     number: 0,
