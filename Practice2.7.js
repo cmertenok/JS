@@ -1,14 +1,14 @@
 'use strict';
 
-/*let name = 'Jhon';
-let admin;
-admin = name;
-console.log(admin);
-console.log(typeof 10n);*/
-for (let i = 2; i <= 10; i++) {
-    if (i % 2 == 0) {
-      console.log( i );
-    }
-  }
+function showPrimes(n) {
+  nextPrime: for (let i = 2; i < n; i++) {
 
-  console.log('Happy new Year!');
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) continue nextPrime;
+    }
+
+    console.log( i ); // простое
+  }
+}
+
+showPrimes();

@@ -1,28 +1,47 @@
-'use strict'
+'use strict';
 
-let a = 2 + 2;
+let browser;
 
-  switch(a){
+if(browser == 'Edge'){
+    console.log( "You've got the Edge!" );
+}
 
-      /*case 3:
-      console.log('You are wrong!');
-      break;*/
+else if(browser == 'Chrome'){
+    console.log( 'Okay we support these browsers too' );
+}
 
-    case 4:
-      console.log('You are right!'); 
-      break;
+else if(browser == 'Firefox'){
+    console.log( 'Okay we support these browsers too' );
+}
 
-    case 1:  
-    case 2:  
-    case 3:
-    case 5:
-      console.log('You are wrong!');
-      break;
+else if(browser == 'Safari'){
+    console.log( 'Okay we support these browsers too' );
+}
 
-     default:
-       console.log('There are no right answers!')    
-  }
-  
-  
+else if(browser == 'Opera'){
+    console.log( 'Okay we support these browsers too' );
+}
+
+else console.log('We hope that this page looks ok!');
+
+//---------------------------------------------------------------
+
+const number = +prompt('Введите число между 0 и 3', '');
+
+switch(number){
+  case 0: 
+  console.log(0);
+  break;
+
+  case 1:
+  console.log(1);
+  break;
+
+  case 2:
+  case 3:
+  console.log('Вы ввели число 2, а может и 3');
+
+}
+
   
   
