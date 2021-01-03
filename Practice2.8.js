@@ -14,7 +14,7 @@ function multiplyNumeric(obj){
 let menu = {
     width: 400,
     height: 600,
-    title: "My menu",
+    title: "My menu!",
   };
 
   multiplyNumeric(menu);
