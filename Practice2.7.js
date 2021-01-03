@@ -1,14 +1,13 @@
 'use strict';
 
-function showPrimes(n) {
-  nextPrime: for (let i = 2; i < n; i++) {
+let user = {
+  name: "Artem",
+  age: 17,
+  isStudent: true,
+};
 
-    for (let j = 2; j < i; j++) {
-      if (i % j == 0) continue nextPrime;
-    }
-
-    console.log( i ); // простое
-  }
+for (let key in user) {
+  
+  console.log(key);  
+  console.log(user[key]);
 }
-
-showPrimes();
