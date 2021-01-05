@@ -5,7 +5,7 @@ function multiplyNumeric(obj){
         if(typeof obj[key] === 'number'){
             obj[key] *= 2;
         }
-        if(typeof obj[key] === 'string'){
+        else if(typeof obj[key] === 'string'){
             obj[key] += ' - It is string!';
         }
     }
@@ -22,4 +22,3 @@ let menu = {
  for(let key in menu){
      console.log(menu[key]);
  }
-
