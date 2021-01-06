@@ -1,7 +1,11 @@
 'use strict';
 
-function sum(a,b){
-    return a + b;
-}
-
-console.log(sum(19,26));
+let user = {
+    name: "Вася"
+  };
+  
+  let id = Symbol("id");
+  
+  user[id] = 1;
+  
+  console.log( user[id] ); // мы можем получить доступ к данным по ключу-символу
