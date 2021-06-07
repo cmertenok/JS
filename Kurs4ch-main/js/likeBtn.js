@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (user != '') {
     like = user.split(',');
   }
-  btnLike.forEach(btn => {
+  for (const btn of btnLike) {
     btn.addEventListener('click', () => {
       btn.classList.toggle('work_btn_like2');
       const counBtnLike = btn.querySelector('.like_btn_counter');
@@ -40,5 +40,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
-  });
+  }
 });

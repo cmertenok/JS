@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const filterList = searchTerm => {
     searchTerm = searchTerm.toLowerCase();
-    optionsList.forEach(option => {
+    for (const option of optionsList) {
       const label =
                 option.firstElementChild.nextElementSibling.innerText.toLowerCase();
       label.indexOf(searchTerm) !== -1 ?
         (option.style.display = 'block') :
         (option.style.display = 'none');
-    });
+    }
   };
 
   selected.addEventListener('click', () => {
@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  optionsList.forEach(o => {
-    o.addEventListener('click', () => {
-      selected.innerHTML = o.querySelector('label').innerHTML;
+  for (const oplis of optionsList) {
+    oplis.addEventListener('click', () => {
+      selected.innerHTML = oplis.querySelector('label').innerHTML;
       optionsContainer.classList.remove('active');
     });
-  });
+  }
 
   searchBox.addEventListener('keyup', e => {
     filterList(e.target.value);
@@ -94,10 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
   printBlockPhoto();
 
   let dropPhotoAdd = document.querySelectorAll('.add_photos');
-  const btnAddPhotos = dropPhotoAdd[countClick].querySelectorAll('.btn_add_photos');
-  const fileInput = dropPhotoAdd[countClick].querySelector('.file_input_photos');
+  const btnAddPhotos =
+        dropPhotoAdd[countClick].querySelectorAll('.btn_add_photos');
+  const fileInput =
+        dropPhotoAdd[countClick].querySelector('.file_input_photos');
 
-  btnAddPhotos.forEach(btn => {
+
+  for (const btn of btnAddPhotos) {
+
     btn.addEventListener('click', () => {
       if (countClick < maxAddPhoto) {
         fileInput.click(); //если пользователь нажимает кнопку, то ввод также нажимаеться
@@ -106,19 +110,18 @@ document.addEventListener('DOMContentLoaded', () => {
         countClick++;
       }
     });
-  });
-
+  }
 
   fileInput.addEventListener('change', function() {
     filePhotos = this.files[0]; //если выбрали несколько файлов, то берём первый
     showFile();
   });
 
-
   function showFile() {
     const fileType = filePhotos.type; //получение выбранного типа файла
     const validExtensions = ['image/jpeg', 'image/jpg', 'image/png']; //формат фото
-    if (validExtensions.includes(fileType)) { //Если файл изображение
+    if (validExtensions.includes(fileType)) {
+      //Если файл изображение
       const fileReader = new FileReader(); //созаём новый FileReader
       fileReader.onload = () => {
         const fileURL = fileReader.result; //передача источника файла пользователя в fileURL
@@ -130,32 +133,32 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       alert('Это не изображение!');
     }
-
   }
 
   //.................Добавление поста....................
 
-  const btnPublickPost = document.getElementById('publish_post');
-
   function inputText() {
+    let flag = true;
+    const field = document.querySelectorAll('.input_post_add');
+    for (const item of field) {
+      if (item.value) {
+        document.getElementById('submit').href = '../index.html';
+        flag = true;
+        return gettingInfo(flag);
+      }
+      item.style.borderColor = 'red';
+      flag = false;
+      return gettingInfo(flag);
+    }
+  }
+
+
+  function gettingInfo(flag) {
     const posts = localStorage.getItem('posts');
     const postInfo = {
       postId: 0,
       productLike: 228,
     };
-
-    let flag = true;
-    const field = document.querySelectorAll('.input_post_add');
-    field.forEach(item => {
-      if (item.value) {
-        document.getElementById('submit').href = '../index.html';
-        flag = true;
-        return flag;
-      }
-      item.style.borderColor = 'red';
-      flag = false;
-      return flag;
-    });
 
     if (flag) {
       postInfo.productName = document.querySelector('.input_poduct_name').value;
@@ -179,5 +182,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  btnPublickPost.addEventListener('click', inputText);
+  document.getElementById('publish_post').addEventListener('click', inputText);
 });

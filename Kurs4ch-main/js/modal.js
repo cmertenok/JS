@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCloseBtn = document.querySelector('[data-close]');
   const btnSin = document.querySelector('.btnSin');
 
-  modalTrigger.forEach(btn => {
+  for (const btn of modalTrigger) {
     btn.addEventListener('click', () => {
       modal.classList.add('show');
       modal.classList.remove('hide');
       document.body.style.overflow = 'hidden';
     });
-  });
+  }
 
   function closeModal() {
     modal.classList.add('hide');
